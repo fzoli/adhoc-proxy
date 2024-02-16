@@ -1,0 +1,16 @@
+name: adhoc-proxy
+services:
+  service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        NGINX_FROM_IMAGE: nginx:1.25.4
+        ENABLED_MODULES: ndk lua
+      tags:
+        - farcsal/adhoc-proxy:latest
+    restart: no
+    environment:
+      - UPSTREAM_SERVER=http://example.com
+    ports:
+      - 8080:80
