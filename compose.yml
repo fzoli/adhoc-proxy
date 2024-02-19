@@ -12,5 +12,6 @@ services:
     restart: no
     environment:
       - UPSTREAM_SERVER=http://example.com
+      - IDLE_TIMEOUT_SECONDS=300
     ports:
       - 8080:80

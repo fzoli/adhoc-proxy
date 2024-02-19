@@ -1,4 +1,4 @@
-local max_idle_seconds = 300
+local max_idle_seconds = {{IDLE_TIMEOUT_SECONDS}}
 local server_start_time = ngx.now()
 
 local function get_last_request_time()
