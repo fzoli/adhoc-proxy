@@ -13,5 +13,8 @@ services:
     environment:
       - UPSTREAM_SERVER=http://example.com
       - IDLE_TIMEOUT_SECONDS=300
+    volumes:
+      - ./certificate.crt:/etc/nginx/certificate.crt
+      - ./privatekey.key:/etc/nginx/privatekey.key
     ports:
-      - 8080:80
+      - 8443:443
